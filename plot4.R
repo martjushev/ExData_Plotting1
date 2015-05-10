@@ -3,7 +3,7 @@ csv<-csv[csv$Date == '1/2/2007' | csv$Date == '2/2/2007',]
 csv_clean<-csv[,2:9]
 csv_clean[,1]<-as.POSIXct(strptime(paste(csv[,1],csv[,2]), format='%d/%m/%Y %H:%M:%S'))
 rm(csv)
-par(mfrow = c(2,2), mar = c(2,0,2,0))
+par(mfrow = c(2,2), mar = c(4,4,4,4))
 plot(csv_clean$Time, csv_clean$Global_active_power, type = 'l', xlab = '', ylab = 'Global Active Power')
 plot(csv_clean$Time, csv_clean$Voltage, type = 'l', xlab = 'datetime', ylab = 'Voltage')
 plot(csv_clean$Time, csv_clean$Sub_metering_1, type = 'l', xlab = '', ylab = 'Energy sub metering', col = 'Black')
